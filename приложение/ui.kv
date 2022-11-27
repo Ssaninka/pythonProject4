@@ -1,0 +1,129 @@
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: 0, 0, 0, 0
+
+<TapeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Поиск'
+            size_hint_y: None
+            height: 80
+        BackgroundLabel:
+            color:0, 0, 0, 1
+            background_color: 1,1,1, 1
+            size: self.texture_size
+            text: 'Новости'
+            size_hint: 1,.75
+        BoxLayout:
+            size_hint_y: None
+            height: 80
+            Button:
+                background_normal: "kartinki\Tape2.png"
+                background_down: "kartinki\Tape2.png"
+            Button:
+                background_normal: "kartinki\Favourites1.png"
+                background_down: "kartinki\Favourites2.png"
+                on_press: root.manager.current = 'favourites'
+            Button:
+                background_normal: "kartinki\Settings1.png"
+                background_down: "kartinki\Settings2.png"
+                on_press: root.manager.current = 'settings'
+
+<FavouritesScreen>:
+    BoxLayout:
+        size_hint_y: None
+        height: 80
+        Button:
+            background_normal: "kartinki\Tape1.png"
+            background_down: "kartinki\Tape2.png"
+            on_press: root.manager.current = 'tape'
+        Button:
+            background_normal: "kartinki\Favourites2.png"
+            background_down: "kartinki\Favourites2.png"
+        Button:
+            background_normal: "kartinki\Settings1.png"
+            background_down: "kartinki\Settings2.png"
+            on_press: root.manager.current = 'settings'
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Профиль'
+                size_hint_y: None
+                height: 300
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                GridLayout:
+                    size:(root.width, 490)
+                    cols:1
+                    size_hint_y:None
+                    size_hint_x:None
+                    Button:
+                        size_hint_y: None
+                        height: 70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Изменить профиль'
+                    Button:
+                        size_hint_y: None
+                        height: 70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Уведомления'
+                    Button:
+                        size_hint_y: None
+                        height: 70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Тёмная тема'
+                    Button:
+                        size_hint_y: None
+                        height: 70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'О приложении'
+                    Button:
+                        size_hint_y: None
+                        height:70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Поделиться'
+                    Button:
+                        size_hint_y: None
+                        height: 70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Что нового?'
+                    Button:
+                        size_hint_y: None
+                        height:70
+                        background_color: 255,255,255
+                        color: 0,0,0,1
+                        text: 'Обратная связь'
+        BoxLayout:
+            size_hint_y: None
+            height: 80
+            Button:
+                background_normal: "kartinki\Tape1.png"
+                background_down: "kartinki\Tape2.png"
+                on_press: root.manager.current = 'tape'
+            Button:
+                background_normal: "kartinki\Favourites1.png"
+                background_down: "kartinki\Favourites2.png"
+                on_press: root.manager.current = 'favourites'
+            Button:
+                background_normal: "kartinki\Settings2.png"
+                background_down: "kartinki\Settings2.png"
